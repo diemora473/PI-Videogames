@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // import VgameCreate from './componentes/VgameCreate'
 import LandingPage from './component/Landing/LandindPage'
-// import Home from './componentes/Home';
+import Home from './component/Home/Home';
 // import Detail from './componentes/Detail'
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
         <Routes>
 
           <Route exact path='/' element={<LandingPage />} />
-          {/* <Route exact path='/home' component={Home} /> */}
+          <Route exact path='/home' element={<Home />} />
           {/* <Route path='/creategame' component={VgameCreate}/> */}
           {/* <Route path='/videogame/:id' component={Detail}/> */}
         </Routes>
