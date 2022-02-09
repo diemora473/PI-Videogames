@@ -1,0 +1,1 @@
+export const RUTE_VIDEOGAMES = 'http://localhost:3001/videogames'

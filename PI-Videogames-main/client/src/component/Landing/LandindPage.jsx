@@ -5,9 +5,9 @@ import './LandingPage.css'
 export default function LandingPage() {
     return (
         <div>
-            <div className='fondo'>
-                <h1 className='titulo'>Videogame website project | made</h1>
-                <Link to='/Home'><button className='boton'>Wellcome to my  Videogames Page!</button></Link>
+            <div >
+                <h1 className='titulo'>¡Hello Videogames!</h1>
+                <Link to='/home'><button className='boton'>Wellcome to my  Videogames Page!</button></Link>
             </div>
         </div>
     )

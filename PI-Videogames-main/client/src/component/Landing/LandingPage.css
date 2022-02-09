@@ -1,10 +1,12 @@
 body{
-    background-image: url('https://images5.alphacoders.com/559/thumb-1920-559865.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    box-sizing: border-box;
+    background-image: url('https://w0.peakpx.com/wallpaper/372/761/HD-wallpaper-sony-playstation-joystick-macro-bokeh-modern-devices-game-console-playstation-joystick-playstation-logo.jpg');
+    /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
 
 .boton{
   width: 150px;
@@ -30,7 +32,22 @@ body{
 }
 
 .titulo{
-  font-style: oblique;
-  font-family: 'Exo', sans-serif;
-  color: #5277bd;
+ display: block;
+ font-family: monospace;
+ white-space:nowrap;
+ border-right: 4px solid;
+ width: 18ch;
+ animation: typing 3s steps(18),
+ blink .5s infinite step-end alternate;
+ overflow: hidden;
+ color: white;
+ /* justify-content: center; */
+ text-align: center;
+}
+
+@keyframes typing{
+  from{width: 0;}
+}
+@keyframes blink{
+ 50%{border-color: transparent} 
 }
