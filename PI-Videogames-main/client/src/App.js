@@ -1,13 +1,13 @@
 import './App.css';
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-// import VgameCreate from './componentes/VgameCreate'
+import VgameCreate from './component/Create/VgameCreate'
 import LandingPage from './component/Landing/LandindPage'
 import Home from './component/Home/Home';
 import { useDispatch } from 'react-redux'
 import { useEffect } from 'react';
 import { getVgames, getPlatforms } from './action/action';
-// import Detail from './componentes/Detail'
+import Detail from './component/Detail/Detail';
 
 function App() {
   const dispatch = useDispatch()
@@ -23,8 +23,8 @@ function App() {
 
           <Route exact path='/' element={<LandingPage />} />
           <Route exact path='/home' element={<Home />} />
-          {/* <Route path='/creategame' component={VgameCreate}/> */}
-          {/* <Route path='/videogame/:id' component={Detail}/> */}
+          <Route exact path='/creategame' element={<VgameCreate />} />
+          <Route path='/videogame/:id' element={<Detail />} />
         </Routes>
       </div>
     </BrowserRouter>

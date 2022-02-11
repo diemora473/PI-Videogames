@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import Card from '../Card/Card';
 import Paginado from '../Paginado/Paginado';
 import './Home.css'
-// import SearchBar from './SearchBar';
+import SearchBar from '../search/SearchBar';
 
 
 //comienza el componente
@@ -79,7 +79,7 @@ export default function Home() {
                     allVgames={allVgames.length}
                     paginado={paginado}
                 />
-                {/* <SearchBar /> */}
+                <SearchBar />
                 <br />
                 <br />
                 <div className='container-cards'>
