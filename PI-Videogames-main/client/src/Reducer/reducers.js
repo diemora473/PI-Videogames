@@ -3,7 +3,8 @@ const initialState = {
     allVideogames: [],
     genres: [],
     platforms: [],
-    detail: []
+    detail: [],
+    filterVideoGames: [],
 }
 
 
@@ -57,6 +58,24 @@ function rootReducer(state = initialState, action) {
                     videogames: sortedArr
                 }
 
+            }
+        case 'FILTER_PLATS':
+            const allVideo = state.videogames
+
+            const filter = allVideo.filter((el => el.platforms?.includes(action.payload)))
+            return {
+                ...state,
+                filterVideoGames: filter
+            }
+        case 'FILTER_GENRE':
+            let filt = state.videogames;
+            filt = action.payload === 'All' ? filt : filt.filter(el => {
+                let gen = el.genres.filter(gen => gen === action.payload)
+                return gen.length !== 0
+            })
+            return {
+                ...state,
+                videogames: filt
             }
         case 'FILTER_CREATED':
             const allVideogames = state.allVideogames

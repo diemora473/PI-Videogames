@@ -40,7 +40,19 @@ export function filterCreated(payload) {
         type: 'FILTER_CREATED',
         payload
     }
-
+}
+export function filterPlat(payload) {
+    return {
+        type: 'FILTER_PLATS',
+        payload
+    }
+}
+export function filterGenre(payload) {
+    console.log(payload)
+    return {
+        type: 'FILTER_GENRE',
+        payload: payload
+    }
 }
 export function getGenres() {
     return async function (dispatch) {
