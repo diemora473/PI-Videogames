@@ -82,7 +82,7 @@ export default function VgameCreate() {
             platforms: [],
             background_image: "",
         });
-        navigate("./home");
+        navigate("/home");
     }
 
     function handleDelete(el) {
@@ -106,28 +106,9 @@ export default function VgameCreate() {
                 <button className="bot-vgame" >Volver</button>
             </Link>
             <h1 className="title-create" >Creá tu Propio Videojuego!</h1>
-            <form onSubmit={(e) => handleSubmit(e)}>
-                <div>
-                    <label>Nombre:</label>
-                    <input
-                        type="text"
-                        value={input.name}
-                        name="name"
-                        onChange={(e) => handleChange(e)}
-                    />
-                    {errors.name && <p className="error">{errors.name}</p>}
-                </div>
-                <div>
-                    <label>Description:</label>
-                    <input
-                        type="text"
-                        value={input.description}
-                        name="description"
-                        onChange={(e) => handleChange(e)}
-                    />
-                    {errors.description && <p className="error">{errors.description}</p>}
-                </div>
-                <div>
+            {/* <form onSubmit={(e) => handleSubmit(e)}> */}
+
+            {/* <div>
                     <label>Released:</label>
                     <input
                         type="date"
@@ -141,29 +122,8 @@ export default function VgameCreate() {
                         </p>
                     )}
                 </div>
-                <div>
-                    <label>Imagen:</label>
-                    <input
-                        type="text"
-                        value={input.background_image}
-                        name="background_image"
-                        onChange={(e) => handleChange(e)}
-                    />
-                </div>
-                <div>
-                    <label>Rating:</label>
-                    <input
-                        type="number"
-                        value={input.rating}
-                        name="rating"
-                        onChange={(e) => handleChange(e)}
-                    />
-                    {errors.rating && (
-                        <p className="error" color="red">
-                            {errors.rating}
-                        </p>
-                    )}
-                </div>
+
+
                 <label>Género:</label>
                 <select onChange={(e) => handleGenSelect(e)}>
                     {genres.map((gen) => (
@@ -171,25 +131,13 @@ export default function VgameCreate() {
                     ))}
                 </select>
                 <li>{input.genres.map((el) => el).join(' - ')}</li>
-                <label > Plataforma:</label>
-                <select onChange={(e) => handlePlatSelect(e)}>
-                    {platforms.map((plat) => (
-                        <option value={plat.name}>{plat.name}</option>
-                    ))}
-                </select>
-                <li>{input.platforms.map((el) => el).join(' - ')}</li>
+
+
                 <br />
                 <br />
                 <button type="submit">Crear Videojuego</button>
             </form>
-            {input.platforms.map((el) => (
-                <div className="divPlat">
-                    <p>{el}</p>
-                    <button className="botonX" onClick={() => handleDelete(el)}>
-                        x
-                    </button>
-                </div>
-            ))}
+
             {input.genres.map((el) => (
                 <div className="divGen">
                     <p>{el}</p>
@@ -197,8 +145,127 @@ export default function VgameCreate() {
                         x
                     </button>
                 </div>
-            ))}
+            ))} */}
+            <body class="font-mono bg-gray-400">
+                <form onSubmit={(e) => handleSubmit(e)}>
+                    <div class="container mx-auto">
+                        <div class="flex justify-center px-6 my-12">
+                            <div class="w-full xl:w-3/4 lg:w-11/12 flex">
 
+                                <div
+                                    class="w-full h-auto bg-gray-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg">
+
+                                    <img src="https://source.unsplash.com/Mv9hjnEUHR4/600x800">
+                                    </img>
+                                </div>
+                                <div class="w-full lg:w-7/12 bg-white p-5 rounded-lg lg:rounded-l-none">
+                                    <h3 class="pt-4 text-2xl text-center">¡Create videogame!</h3>
+                                    <form class="px-8 pt-6 pb-8 mb-4 bg-white rounded">
+                                        <div class="mb-4 md:flex md:justify-between">
+                                            <div class="mb-4 md:mr-2 md:mb-0">
+                                                <label class="block mb-2 text-sm font-bold text-gray-700" for="firstName">
+                                                    Name
+                                                </label>
+                                                <input
+                                                    class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                                    id="firstName"
+                                                    type="text"
+                                                    value={input.name}
+                                                    name="name"
+                                                    onChange={(e) => handleChange(e)}
+                                                />
+                                                {errors.name && <p className="error">{errors.name}</p>}
+                                            </div>
+                                            <div class="md:ml-2">
+                                                <label class="block mb-2 text-sm font-bold text-gray-700" for="lastName">
+                                                    Rating
+                                                </label>
+                                                <input
+                                                    class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                                    id="lastName"
+                                                    type="number"
+                                                    value={input.rating}
+                                                    name="rating"
+                                                    onChange={(e) => handleChange(e)}
+                                                />
+                                                {errors.rating && (
+                                                    <p className="error" color="red">
+                                                        {errors.rating}
+                                                    </p>
+                                                )}
+                                            </div>
+                                        </div>
+                                        <div class="mb-4">
+                                            <label class="block mb-2 text-sm font-bold text-gray-700" for="text">
+                                                Image
+                                            </label>
+                                            <input
+                                                class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                                id="text"
+                                                type="text"
+                                                value={input.background_image}
+                                                name="background_image"
+                                                onChange={(e) => handleChange(e)}
+                                            />
+                                        </div>
+                                        <div class="mb-4 md:flex md:justify-between">
+                                            <div class="mb-4 md:mr-2 md:mb-0">
+                                                <label class="block mb-2 text-sm font-bold text-gray-700" for="text">
+                                                    Description
+                                                </label>
+                                                <input
+                                                    class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                                    id="text"
+                                                    type="text"
+                                                    value={input.description}
+                                                    name="description"
+                                                    onChange={(e) => handleChange(e)}
+                                                />
+                                                {errors.description && <p className="error">{errors.description}</p>}
+                                            </div>
+                                            <div class="md:ml-2 ">
+                                                <label class="block mb-2 text-sm font-bold text-gray-700" for="text"> platforms
+                                                </label>
+                                                <select className='w-full px-3 py-2
+                                                 mb-3 text-sm leading-tight text-gray-700 border rounded shadow  focus:outline-none focus:shadow-outline' onChange={(e) => handlePlatSelect(e)}>
+                                                    {platforms.map((plat) => (
+                                                        <option value={plat.name}>{plat.name}</option>
+                                                    ))}
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="mb-6 text-center flex justify-between">
+                                            <button
+                                                class="w-50 px-4 py-2 font-bold text-white bg-red-500 rounded-full hover:bg-red-700 focus:outline-none focus:shadow-outline"
+                                                type="button"
+                                            >
+                                                Back to home
+                                            </button>
+                                            <button
+                                                class="w-50 px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"
+                                                type="submit"
+                                            >
+                                                ¡Create videogame!
+                                            </button>
+                                        </div>
+
+
+
+                                    </form>
+                                    {input.platforms.map((el) => (
+                                        <div className="divPlat">
+                                            <p>{el}</p>
+                                            <button className="botonX" onClick={() => handleDelete(el)}>
+                                                x
+                                            </button>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </body>
         </div>
     );
 }

@@ -8,7 +8,7 @@ import { getVgames, filterCreated, getPlatforms, sortvgames, filterGenre, filter
 import { Link } from 'react-router-dom';
 import Card from '../Card/Card';
 import Paginado from '../Paginado/Paginado';
-import './Home.css'
+// import './Home.css'
 import circulo from '../img/circulo.png'
 import SearchBar from '../search/SearchBar';
 
@@ -168,26 +168,47 @@ export default function Home() {
 
                         <a href="/creategame" class="text-gray-300 hover:bg-gray-700 hover:text-white font-bold block px-3 py-2 rounded-md text-base font-medium">Create Game</a>
 
-                        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Reports</a>
+                        <SearchBar />
                     </div>
 
                 </div>
             </nav >
-            <div className='body'>
+            <div className='bg-gray-600'>
                 <div className='logo'>
 
+                </div>
+                <div class="container mx-auto py-9 md:py-12 px-4 md:px-6">
+                    <div class="flex items-strech justify-center flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 lg:space-x-8">
+                        <div class="flex flex-col md:flex-row items-strech justify-between bg-gray-50 dark:bg-gray-800 py-6 px-6 md:py-12 lg:px-12 md:w-8/12 lg:w-7/12 xl:w-8/12 2xl:w-9/12 rounded-lg">
+                            <div class="flex flex-col justify-center md:w-1/2 lg:w-1/2">
+                                <h1 class="text-3xl lg:text-4xl font-semibold text-gray-800 dark:text-white">Videogames </h1>
+
+                            </div>
+                            <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center md:justify-end">
+                                <img src="https://s3.amazonaws.com/businessinsider.mx/wp-content/uploads/2021/12/08164547/Comparacio%CC%81n-de-consolas.jpg" alt="" class="" />
+                            </div>
+                        </div>
+                        <div class="md:w-7/12 lg:w-8/12 xl:w-5/12 2xl:w-3/12 bg-gray-50 dark:bg-gray-800 py-6 px-6 md:py-0 md:px-4 lg:px-6 lg:py-4 flex justify-start  relative rounded-lg">
+                            <div class="flex flex-col justify-center
+                             ">
+                                <h1 class="text-3xl  
+                                font-semibold text-gray-800 dark:text-white">Game Console</h1>
+
+                            </div>
+                            <div class="md:w-1/2 flex justify-center sm:mt-6 md:mt-0
+                         md:absolute md:bottom-4 md:right-4
+md:top-0  ">
+                                <img src="https://www.latercera.com/resizer/k6k4swn1WSSbWU4ilrV-wk4OY0w=/900x600/smart/cloudfront-us-east-1.images.arcpublishing.com/copesa/6NHJXPUYUVCGFNJ5LM2PHAAA7E.jpg" alt="" class="md:w-20 md:h-20
+md:mt-9 lg:w-52 lg:h-44 flex justify-center mt-8 " />
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div>
 
 
-                    <Paginado
-                        vgamesPerPage={vgamesPerPage}
-                        allVgames={allVgames.length}
-                        paginado={paginado}
-                    />
-                    <br />
-                    <br />
-                    <div className='container-cards'>
+
+                    <div className="relative grid sm:grid-cols-3 p-8 ">
                         {
 
 
@@ -195,8 +216,8 @@ export default function Home() {
 
                                 return (
 
-                                    <div className='card-link'>
-                                        <Link to={'/videogame/' + el.id} style={{ textDecoration: 'none', color: 'black' }}>
+                                    <div className=''>
+                                        <Link to={'/videogame/' + el.id} >
                                             <Card name={el.name}
                                                 background_image={el.background_image}
                                                 rating={el.rating}
@@ -211,6 +232,11 @@ export default function Home() {
                         }
                     </div>
                 </div>
+                <Paginado
+                    vgamesPerPage={vgamesPerPage}
+                    allVgames={allVgames.length}
+                    paginado={paginado}
+                />
             </div>
         </div >
     )
